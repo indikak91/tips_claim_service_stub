@@ -14,7 +14,7 @@
 	<name>tips_claim_service_stub</name>
 	<description>RS Cored Stub Service</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
