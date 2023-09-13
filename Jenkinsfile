@@ -44,7 +44,10 @@ pipeline{
 
         stage('Invokde Downstream Job') {
             steps{
-                build quietPeriod: 5, job: 'pipeline_scm_git_job_tips_claims-Service_downstream', waitForStart: true
+              // buil anothe job with interval  
+              //  build quietPeriod: 5, job: 'pipeline_scm_git_job_tips_claims-Service_downstream', waitForStart: true
+              // pass parameter
+             build job: 'pipeline_scm_git_job_tips_claims-Service_downstream', parameters: [string(name: 'BUILD_NUMBER', value: env.BUILD_NUMBER)]   
             }
         }
 
