@@ -14,6 +14,13 @@ pipeline{
                 sh 'cat Dockerfile'
             }
         }
+        
+        stage ('Package the Project...') {
+            steps{
+                sh 'mvn clean install '
+            }
+        }
+                
         stage ('Build Image...') {
             steps{
                 sh 'docker build -t indikak91/tips_claims_service:$BUILD_NUMBER . '
@@ -40,11 +47,6 @@ pipeline{
             }
         }
 
-        stage('Deploy') {
-            steps {
-                echo 'Deploying...'
-            }
-        }
     }
     
     post {
