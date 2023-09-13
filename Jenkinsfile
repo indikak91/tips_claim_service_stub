@@ -2,7 +2,7 @@ pipeline{
     agent any
     
     environment{
-    	DOCKERHUB_CREDS = credentials('dockerhub')
+    	DOCKERHUB_CREDS  = credentials('dockerhub')
     }
 
     stages {
@@ -23,14 +23,15 @@ pipeline{
                 
         stage ('Build Image...') {
             steps{
-                sh 'docker build -t indikak91/tips_claims_service:$BUILD_NUMBER . '
+                sh 'docker build -t indikak2005/tips_claims_service:$BUILD_NUMBER . '
+                // indikak2005 is the dockerhub password
             }
         }
         
         stage ('DockerHub Login....') {
 
             steps{
-                sh 'echo $DOCKERHUB_CREDS_PSW | docker login -u DOCKERHUB_CREDS_USR --password-stdin'
+                sh 'echo $DOCKERHUB_CREDS_PSW | docker login -u $DOCKERHUB_CREDS_USR --password-stdin'
             }
         } 
         
