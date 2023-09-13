@@ -17,7 +17,7 @@ pipeline{
         stage ('Build Image...') {
 
             steps{
-                sh 'docker build -t indikak91/tips_claims_service:$BUILD_NUMBER ./pushdockerimage/'
+                sh 'docker build -t indikak91/tips_claims_service:$BUILD_NUMBER . '
             }
         }
         
