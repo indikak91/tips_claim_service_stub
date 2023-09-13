@@ -42,9 +42,9 @@ pipeline{
             }
         }             
 
-        stage('Test') {
+        stage('Invokde Downstream Job') {
             steps{
-                echo 'Testing...'
+                build quietPeriod: 5, job: 'pipeline_scm_git_job_tips_claims-Service_downstream', waitForStart: true
             }
         }
 
