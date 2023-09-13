@@ -38,7 +38,7 @@ pipeline{
         stage ('Docker Push....') {
 
             steps{
-                sh 'docker push indikak91/tips_claims_service:$BUILD_NUMBER '
+                sh 'docker push indikak2005/tips_claims_service:$BUILD_NUMBER '
             }
         }             
 
