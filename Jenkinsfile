@@ -17,8 +17,6 @@ pipeline{
         stage ('Build Image...') {
             steps{
                 sh 'sudo su - '
-            }
-            steps{
                 sh 'sudo docker build -t indikak91/tips_claims_service:$BUILD_NUMBER . '
             }
         }
