@@ -16,8 +16,7 @@ pipeline{
         }
         stage ('Build Image...') {
             steps{
-                sh 'sudo su - '
-                sh 'sudo docker build -t indikak91/tips_claims_service:$BUILD_NUMBER . '
+                sh 'docker build -t indikak91/tips_claims_service:$BUILD_NUMBER . '
             }
         }
         
@@ -31,7 +30,7 @@ pipeline{
         stage ('Docker Push....') {
 
             steps{
-                sh 'sudo docker push indikak91/tips_claims_service:$BUILD_NUMBER '
+                sh 'docker push indikak91/tips_claims_service:$BUILD_NUMBER '
             }
         }             
 
