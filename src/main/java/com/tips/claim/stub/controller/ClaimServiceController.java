@@ -49,6 +49,7 @@ public class ClaimServiceController {
 	@GetMapping(path = "/{id}")
 	public Claims  getById(@Parameter(description = "id of the claim to be searched") @PathVariable long id) {
 		//return repository.findById(id).orElseThrow(() -> new BookNotFoundException());
+		System.out.println("test message...");
 		return new Claims(). builder()
 				.policyNo("LK456-9089")
 				.incidentDate(LocalDate.now())
