@@ -44,7 +44,7 @@ pipeline{
                 
         stage ('Build Image...') {
             steps{
-                  sh 'docker build -t indikak2005/tips_claims_service . '
+                  sh 'docker build -t indikak2005/tips_claims_service:latest . '
                 //sh 'docker build -t indikak2005/tips_claims_service:$BUILD_NUMBER . '
                 // indikak2005 is the dockerhub password
             }
