@@ -25,7 +25,7 @@ pipeline{
             steps {
 	    		withSonarQubeEnv('sonarcube') {	    		    
 	      			sh 'mvn sonar:sonar -X'
-	      			#sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.6.0.1398:sonar -X'
+	      			//sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.6.0.1398:sonar -X'
 	    		}
             }
         }
