@@ -65,6 +65,12 @@ pipeline{
             }
         }             
 
+        stage ('Deployment....') {
+            steps{
+                sh 'ansible-playbook /opt/playbooks/deploy_apps.yml'                
+            }
+        }  
+
         stage('Invokde Downstream Job') {
             steps{
               // buil anothe job with interval  
