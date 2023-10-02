@@ -67,7 +67,7 @@ pipeline{
 
         stage ('Deployment....') {
             steps{
-                sh 'ansible-playbook /opt/playbooks/deploy_apps.yml'                
+                sh 'ansible-playbook /opt/playbooks/deploy_apps.yml'                 
             }
         }  
 
