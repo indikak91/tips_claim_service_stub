@@ -24,6 +24,7 @@ pipeline{
        stage('SonarQube analysis') {
             steps {
 	    		withSonarQubeEnv('sonarcube') {
+	    		    sh '/opt/sonar_scanner/sonar-scanner-4.0.0.1744-linux/bin/sonar-scanner -Dsonar.projectKey=develop -Dsonar.sources=. '
 	      			sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.6.0.1398:sonar'
 	    		}
             }
