@@ -20,6 +20,12 @@ pipeline{
                 sh 'mvn clean install '
             }
         }
+        
+	   stage('SonarQube analysis') {
+	    withSonarQubeEnv(credentialsId: '0a6b33099214c5a7ba9b372e577a9b2cb89c77ba', installationName: 'tune_cicd') { // You can override the credential to be used
+	      sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.6.0.1398:sonar'
+	    }
+	  }       
                 
         stage ('Build Image...') {
             steps{
