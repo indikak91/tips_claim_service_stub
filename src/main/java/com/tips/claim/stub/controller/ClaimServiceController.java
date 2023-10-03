@@ -2,6 +2,7 @@ package com.tips.claim.stub.controller;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -53,6 +54,7 @@ public class ClaimServiceController {
 		return new Claims(). builder()
 				.policyNo("LK456-9089")
 				.incidentDate(LocalDate.now())
+				.incidentTime(LocalTime.now())
 				.claimBenefitCode("CLA_9089")
 				.benefitGroupId("9089")
 				.estAmount(BigDecimal.valueOf(9000.00))

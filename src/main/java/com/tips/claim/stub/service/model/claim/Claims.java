@@ -2,6 +2,7 @@ package com.tips.claim.stub.service.model.claim;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -19,6 +20,7 @@ public class Claims {
 	
 	private String policyNo;
 	private LocalDate incidentDate;
+	private LocalTime incidentTime;
 	private String claimBenefitCode;
 	private String benefitGroupId;
 	private BigDecimal estAmount;
