@@ -65,18 +65,12 @@ pipeline{
             }
         }             
 
-        stage ('Deployment....') {
+        stage('Cont. Deployment') {
             steps{
-                sh 'ansible-playbook /opt/playbooks/deploy_apps.yml'                 
-            }
-        }  
-
-        stage('Invokde Downstream Job') {
-            steps{
-              // buil anothe job with interval  
+              // include this if you need any interval  
               //  build quietPeriod: 5, job: 'pipeline_scm_git_job_tips_claims-Service_downstream', waitForStart: true
               // pass parameter
-             build job: 'pipeline_scm_git_job_tips_claims-Service_downstream', parameters: [string(name: 'BUILD_NUMBER', value: env.BUILD_NUMBER)]   
+             build job: 'ansible_deployment', parameters: [string(name: 'BUILD_NUMBER', value: env.BUILD_NUMBER)]   
             }
         }
 
