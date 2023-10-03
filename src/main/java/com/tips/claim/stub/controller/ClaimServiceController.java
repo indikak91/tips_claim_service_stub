@@ -55,6 +55,10 @@ public class ClaimServiceController {
 				.policyNo("LK456-9089")
 				.incidentDate(LocalDate.now())
 				.incidentTime(LocalTime.now())
+				
+				.policyHolderFirstName("Indika")
+				.policyHolderLastName("Kularatne")
+				
 				.claimBenefitCode("CLA_9089")
 				.benefitGroupId("9089")
 				.estAmount(BigDecimal.valueOf(9000.00))

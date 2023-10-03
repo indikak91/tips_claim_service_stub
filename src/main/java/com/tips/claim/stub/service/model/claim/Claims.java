@@ -21,6 +21,11 @@ public class Claims {
 	private String policyNo;
 	private LocalDate incidentDate;
 	private LocalTime incidentTime;
+	
+	private String policyHolderFirstName;
+	private String policyHolderLastName;
+	
+	
 	private String claimBenefitCode;
 	private String benefitGroupId;
 	private BigDecimal estAmount;
